@@ -1,0 +1,80 @@
+{
+	// Place your AtCoder ワークスペース snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Union Find Tree": {
+		"prefix": "unionfindtree",
+		"body": [
+		"class UnionFindTree:",
+		"\tdef __init__(self, n):",
+		"\t\tself.parents = [-1] * n",
+		"",
+		"\tdef find(self, x):",
+		"\t\tif self.parents[x] < 0:",
+		"\t\t\treturn x",
+		"\t\telse:",
+		"\t\t\tself.parents[x] = self.find(self.parents[x])",
+		"\t\t\treturn self.find(self.parents[x])",
+		"",
+		"\tdef union(self, x, y):",
+		"\t\tx = self.find(x)",
+		"\t\ty = self.find(y)",
+		"\t\tif x == y:",
+		"\t\t\treturn",
+		"\t\tif self.parents[x] > self.parents[y]:",
+		"\t\t\tx, y = y, x",
+		"\t\tself.parents[x] += self.parents[y]",
+		"\t\tself.parents[y] = x",
+		"",
+		"\tdef same_check(self, x, y):",
+		"\t\treturn self.find(x) == self.find(y)",
+		"",
+		"\tdef size(self, x):",
+		"\t\treturn -1 * self.parents[self.find(x)]",
+		"",
+		],
+		"description": "Union Find Tree"
+	},
+	"list input": {
+		"prefix": ["input", "list(map(int, input()))"],
+		"body": [
+		"list(map(int, input().split()))",
+		],
+		"description": "list input"
+	},
+	"recursion limit": {
+		"prefix": ["sys", "import sys"],
+		"body": [
+		"import sys",
+		"sys.setrecursionlimit(10**7)",
+		],
+		"description": "update recursion limit"
+	},
+	"int(input())": {
+		"prefix": "int(input())",
+		"body": [
+		"int(input())",
+		],
+		"description": "int input"
+	},
+	"str(input())": {
+		"prefix": "str(input())",
+		"body": [
+		"str(input())",
+		],
+		"description": "string input"
+	},
+}

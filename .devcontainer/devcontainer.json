@@ -37,7 +37,6 @@
 		"equinusocio.vsc-material-theme",
 		"equinusocio.vsc-material-theme-icons",
 		"almenon.arepl",
-		"oderwat.indent-rainbow",
 		"ms-toolsai.jupyter",
 		"ms-toolsai.jupyter-renderers",
 		"ms-vsliveshare.vsliveshare",
@@ -47,5 +46,7 @@
 		"njpwerner.autodocstring",
 		"shardulm94.trailing-spaces",
 		"mosapride.zenkaku",
+		"knttnk.snippet-utilities",
     ]
+
 }
