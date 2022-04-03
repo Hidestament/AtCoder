@@ -1,10 +1,7 @@
-x1, y1 = map(int, input().split())
-x2, y2 = map(int, input().split())
-x3, y3 = map(int, input().split())
+"""頑張る解答
+"""
 
-
-points = [[x1, y1], [x2, y2], [x3, y3]]
-points.sort()
+points = sorted([list(map(int, input().split())) for _ in range(3)])
 
 if points[0][0] == points[1][0]:
     x4 = points[2][0]
