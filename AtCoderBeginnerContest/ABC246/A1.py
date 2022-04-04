@@ -1,4 +1,7 @@
-"""Xorを使用した解答
+"""
+A - Four Points
+問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_a
+Xor で 解く
 """
 
 

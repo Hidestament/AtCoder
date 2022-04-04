@@ -1,4 +1,7 @@
-"""Binary Searchで解く
+"""
+D - 2-variable Function
+問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_d
+Binary Searchでとく
 """
 
 N = int(input())

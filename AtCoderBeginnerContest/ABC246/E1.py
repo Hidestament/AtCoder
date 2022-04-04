@@ -1,4 +1,7 @@
-"""0-1BFSで行う
+"""
+E - Bishop
+問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_e
+0-1BFSで解く
 """
 
 from collections import deque

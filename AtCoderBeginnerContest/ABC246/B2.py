@@ -1,4 +1,7 @@
-"""複素数でやってみる
+"""
+B - Get Closer
+問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_b
+複素数で解く
 """
 
 A, B = map(int, input().split())

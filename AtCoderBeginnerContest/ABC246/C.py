@@ -1,3 +1,9 @@
+"""
+C - Coupon
+問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_c
+"""
+
+
 N, K, X = map(int, input().split())
 A = list(map(int, input().split()))
 

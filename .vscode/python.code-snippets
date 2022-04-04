@@ -105,4 +105,27 @@
 		],
 		"description": "2進数展開した整数のうち、1が立っている箇所を数える"
 	},
+	"template": {
+		"prefix": "template",
+		"body": [
+		"\"\"\"",
+		"問題名",
+		"問題リンク: ",
+		"\"\"\"",
+		],
+		"description": "AtCoderやるときのテンプレート"
+	},
+	"graph input": {
+		"prefix": "graph input",
+		"body": [
+		"graph = [[] for _ in range(N)]",
+		"for _ in range(M):",
+		"\tu, v = map(int, input().split())",
+		"\tu -= 1",
+		"\tv -= 1",
+		"\tgraph[u].append(v)",
+		"\tgraph[v].append(u)",
+		],
+		"description": "input of G = (N, M)"
+	},
 }

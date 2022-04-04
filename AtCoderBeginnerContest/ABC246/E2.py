@@ -1,4 +1,7 @@
-"""枝刈りBFSで行う
+"""
+E - Bishop
+問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_e
+枝刈りBFSで解く
 """
 
 
