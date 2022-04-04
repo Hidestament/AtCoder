@@ -77,4 +77,32 @@
 		],
 		"description": "string input"
 	},
+	"map(int, input().split())": {
+		"prefix": "map(int, input().split())",
+		"body": [
+		"map(int, input().split())",
+		],
+		"description": "Input of Multiple Integers"
+	},
+	"popcount": {
+		"prefix": "popcount",
+		"body": [
+		"def popcount(x):",
+		"\t'''xの立っているビット数をカウントする関数",
+		"\t(xは64bit整数)'''",
+		"",
+		"\t# 2bitごとの組に分け、立っているビット数を2bitで表現する",
+		"\tx = x - ((x >> 1) & 0x5555555555555555)",
+		"",
+		"\t# 4bit整数に 上位2bit + 下位2bit を計算した値を入れる",
+		"\tx = (x & 0x3333333333333333) + ((x >> 2) & 0x3333333333333333)",
+		"",
+		"\tx = (x + (x >> 4)) & 0x0f0f0f0f0f0f0f0f # 8bitごと",
+		"\tx = x + (x >> 8) # 16bitごと",
+		"\tx = x + (x >> 16) # 32bitごと",
+		"\tx = x + (x >> 32) # 64bitごと = 全部の合計",
+		"\treturn x & 0x0000007f",
+		],
+		"description": "2進数展開した整数のうち、1が立っている箇所を数える"
+	},
 }
