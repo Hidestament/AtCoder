@@ -1,6 +1,7 @@
 """
 C - Coupon
 問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_c
+2回探索する
 """
 
 

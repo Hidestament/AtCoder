@@ -1,7 +1,7 @@
 """
 B - Get Closer
 問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_b
-頑張って解く
+頑張ってとく
 """
 
 A, B = map(int, input().split())

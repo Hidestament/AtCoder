@@ -1,7 +1,7 @@
 """
 A - Four Points
 問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_a
-頑張ってとく
+頑張って解く
 """
 
 points = sorted([list(map(int, input().split())) for _ in range(3)])

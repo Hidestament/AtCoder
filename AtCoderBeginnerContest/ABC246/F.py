@@ -1,7 +1,7 @@
 """
 F - typewriter
 問題リンク: https://atcoder.jp/contests/abc246/tasks/abc246_f
-包除原理
+包除原理で頑張る
 """
 
 
