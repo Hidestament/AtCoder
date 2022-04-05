@@ -255,4 +255,26 @@
 		],
 		"description": "Strongly-Connected Components"
 		},
+	"combination on Modulo": {
+			"prefix": "combination",
+			"body": [
+			"fact = [1] * (N+1)  # fact[i] = i! % mod",
+			"inv = [1] * (N+1)  # inv[i] = i^-1 % mod, factinvの計算用",
+			"inv[0] = 0",
+			"factinv = [1] * (N+1)  # factinv[i] = (i!)^-1 % mod",
+			"",
+			"for i in range(2, N+1):",
+			"\tfact[i] = (fact[i-1] * i) % mod",
+			"\tinv[i] = (-inv[mod % i] * (mod // i)) % mod",
+			"\tfactinv[i] = (factinv[i-1] * inv[i]) % mod",
+			"",
+			"",
+			"def cmb_mod(n, r):",
+			"\tif (r < 0) or (n < r):",
+			"\t\treturn 0",
+			"\tr = min(r, n-r)",
+			"\treturn fact[n] * factinv[r] * factinv[n-r] % mod",
+			],
+			"description": "Combination on Modulo"
+	},
 }
