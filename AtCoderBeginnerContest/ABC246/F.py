@@ -48,24 +48,3 @@ for bits in range(1, 1 << N):
     ans %= mod
 
 print(ans)
-
-
-mod = 10**9 + 7
-N = 10**5
-
-fact = [1] * (N+1)  # fact[i] = i! % mod
-inv = [1] * (N+1)  # inv[i] = i^-1 % mod, factinvの計算用
-inv[0] = 0
-factinv = [1] * (N+1)  # factinv[i] = (i!)^-1 % mod
-
-for i in range(2, N+1):
-    fact[i] = (fact[i-1] * i) % mod
-    inv[i] = (-inv[mod % i] * (mod // i)) % mod
-    factinv[i] = (factinv[i-1] * inv[i]) % mod
-
-
-def cmb_mod(n, r):
-    if (r < 0) or (n < r):
-        return 0
-    r = min(r, n-r)
-    return fact[n] * factinv[r] * factinv[n-r] % mod
