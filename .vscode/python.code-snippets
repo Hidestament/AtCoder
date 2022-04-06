@@ -277,4 +277,30 @@
 			],
 			"description": "Combination on Modulo"
 	},
+	"warshall floyd法": {
+		"prefix": "warshall_floyd",
+		"body": [
+		"INF = 10**10",
+		"def warshall_floyd(graph):",
+		"\tn = len(graph)",
+		"\tdist = [[INF] * n for _ in range(n)]",
+		"",
+		"\t# 初期状態: i -> i は距離0",
+		"\tfor i in range(n):",
+		"\t\tdist[i][i] = 0",
+		"",
+		"\t# 初期状態: 隣接頂点のコストをdistに記録する",
+		"\tfor now in range(n):",
+		"\t\tfor to, cost in graph[now]:",
+		"\t\t\tdist[now][to] = cost",
+		"",
+		"\t# DP",
+		"\tfor k in range(n):  # 中継点",
+		"\t\tfor i in range(n):  # 始点",
+		"\t\t\tfor j in range(n):  # 終点",
+		"\t\t\t\tdist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])",
+		"\treturn dist",
+		],
+		"description": "全点対間最短経路"
+	},
 }
