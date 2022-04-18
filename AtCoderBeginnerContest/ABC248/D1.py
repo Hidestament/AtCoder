@@ -1,6 +1,7 @@
 """
 D - Range Count Query
 https://atcoder.jp/contests/abc248/tasks/abc248_d
+BITで殴る
 """
 
 from collections import defaultdict
@@ -73,28 +74,32 @@ class BinaryIndexedTree:
 
 N = int(input())
 A = list(map(int, input().split()))
-sortA = defaultdict(list)
-for i, a in enumerate(A):
-    sortA[a].append(i)
 
+# index[a]: a in Aのindexのリスト
+ind = defaultdict(list)
+for i, a in enumerate(A, start=1):
+    ind[a].append(i)
+
+# クエリ先読み
 Q = int(input())
-
 queries = defaultdict(list)
 for i in range(Q):
     q = list(map(int, input().split()))
-    qu = [q[0], q[1], i]
-    queries[q[2]].append(qu)
+    queries[q[2]].append([q[0], q[1], i])  # [left, right, クエリ番号]
 
 ans = [None] * Q
-bit = BinaryIndexedTree()
+bit = BinaryIndexedTree()  # bitは使いまわし
 for x in queries:
-    for i in sortA[x]:
+    # bitの更新
+    for i in ind[x]:
         bit.update(i, 1)
 
-    for left, right, ans_num in queries[x]:
-        ans[ans_num] = bit.sum_range(left-1, right-1)
+    # クエリに答える
+    for left, right, q in queries[x]:
+        ans[q] = bit.sum_range(left, right)
 
-    for i in sortA[x]:
+    # bitの更新（初期化）
+    for i in ind[x]:
         bit.update(i, -1)
 
 print(*ans, sep="\n")
