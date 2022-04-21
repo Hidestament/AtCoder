@@ -1,6 +1,7 @@
 """
 E - Σ[k=0..10^100]floor(X/10^k)
 https://atcoder.jp/contests/abc233/tasks/abc233_e
+ひとけたずつ頑張って計算していく
 """
 
 from collections import deque
