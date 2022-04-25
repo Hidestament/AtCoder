@@ -1,6 +1,7 @@
 """
 E - Integer Sequence Fair
 https://atcoder.jp/contests/abc228/tasks/abc228_e
+参考: https://atcoder.jp/contests/abc228/editorial/2932
 """
 
 N, K, M = map(int, input().split())
