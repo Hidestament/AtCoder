@@ -905,4 +905,24 @@
 		],
 		"description": "min-max MultiSet"
 	},
+	"Euler Tour": {
+		"prefix": "euler tour",
+		"body": [
+		"euler_tour = []",
+		"start_time = [0] * N",
+		"end_time = [0] * N",
+		"depth = [0] * N",
+		"",
+		"",
+		"def dfs(now):",
+		"\tstart_time[now] = len(euler_tour)",
+		"\teuler_tour.append(now)",
+		"\tfor to in graph[now]:",
+		"\t\tdepth[to] = depth[now] + 1",
+		"\t\tdfs(to)",
+		"\t\teuler_tour.append(now)",
+		"\tend_time[now] = len(euler_tour) - 1",
+		],
+		"description": "your description"
+	},
 }
