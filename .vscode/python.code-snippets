@@ -925,4 +925,33 @@
 		],
 		"description": "your description"
 	},
+	"doubling": {
+		"prefix": "doubling",
+		"body": [
+		"# ダブリング",
+		"# 2^kの最大のk",
+		"max_log_K = 40",
+		"",
+		"# dv[k][i]: iから2^k回操作を行ったあとのstart地点",
+		"dv = [[-1] * N for _ in range(max_log_K)]",
+		"# dv[0][0 ~ N]を求める",
+		"for i in range(N):",
+		"\tdv[0][i] = ...",
+		"",
+		"# 一般のkについて求める",
+		"for k in range(1, max_log_K):",
+		"\tfor i in range(N):",
+		"\t\tdv[k][i] = dv[k - 1][dv[k - 1][i]]",
+		"",
+		"# クエリ",
+		"for _ in range(Q):",
+		"\tk = int(input()) - 1",
+		"",
+		"\tnow = 0",
+		"\tfor dig in range(max_log_K + 1):",
+		"\t\tif k & (1 << dig):",
+		"\t\t\tnow = dv[dig][now]",
+		],
+		"description": "ダブリングのテンプレート"
+	},
 }
