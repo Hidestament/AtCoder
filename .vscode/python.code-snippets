@@ -954,4 +954,60 @@
 		],
 		"description": "ダブリングのテンプレート"
 	},
+	"linear conguetial equation": {
+		"prefix": "linear_conguetial_equation",
+		"body": [
+		"def solve_linear_congruential_equation(a: int, b: int, m: int):",
+		"\t\"\"\"Solve Linear Congruential Equation.",
+		"",
+		"\tsolve ax = b (mod m)",
+		"",
+		"\tReturns:",
+		"\t\tint: もし解が存在しなければ -1. そうでなければ最小の解xを返す.",
+		"\t\"\"\"",
+		"\tg = gcd(a, m)",
+		"\tif g == 1:",
+		"\t\tx = b * pow(a, -1, m)",
+		"\t\treturn x % m",
+		"\telif b % g == 0:",
+		"\t\treturn solve_linear_congruential_equation(a // g, b // g, m // g)",
+		"\telse:",
+		"\t\treturn -1",
+		],
+		"description": "一次の合同方程式"
+	},
+	"run length encode": {
+		"prefix": "run_length_encode",
+		"body": [
+		"from itertools import groupby",
+		"",
+		"",
+		"def run_length_encode(S: str):",
+		"\tgrouped = groupby(S)",
+		"\tres = [(k, len(list(v))) for k, v in grouped]",
+		"\treturn res",
+		],
+		"description": "ランレングス圧縮"
+	},
+	"mod inv": {
+		"prefix": "mod inv",
+		"body": [
+		"def xgcd(a, b):",
+		"\tx0, y0, x1, y1 = 1, 0, 0, 1",
+		"\twhile b != 0:",
+		"\t\tq, a, b = a // b, b, a % b",
+		"\t\tx0, x1 = x1, x0 - q * x1",
+		"\t\ty0, y1 = y1, y0 - q * y1",
+		"\treturn a, x0, y0",
+		"",
+		"",
+		"def modinv(a, m):",
+		"\tg, x, y = xgcd(a, m)",
+		"\tif g != 1:",
+		"\t\traise Exception(\"modular inverse does not exist\")",
+		"\telse:",
+		"\t\treturn x % m",
+		],
+		"description": "拡張ユークリッドの互除法を用いた逆元"
+	},
 }
